@@ -94,7 +94,7 @@ button:hover {
 	left: 50%;
 	transform: translateX(-50%);
 	font-size: 0.7em;
-	opacity: 0.05;
+	opacity: 0.01;
 	letter-spaceing: 3px;
 	text-decoration: none;
 	color: white;
