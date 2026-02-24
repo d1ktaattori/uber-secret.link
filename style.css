@@ -87,3 +87,18 @@ button:hover {
 	  gap: 10px
 	  align-items: center;
 }
+
+.continue-link {
+	position: fixed;
+	bottom: 20px;
+	right: 25px;
+	font-size: 0.8em;
+	opacity: 0.15;
+	text-decoration: none;
+	color: #aaa;
+	transition: 0.5s;
+}
+
+.continue-link:hover {
+	opcaity: 0.8;
+}
