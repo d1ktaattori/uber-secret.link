@@ -90,15 +90,17 @@ button:hover {
 
 .continue-link {
 	position: fixed;
-	bottom: 35px;
-	right: 50px;
-	font-size: 0.8em;
-	opacity: 0.15;
+	bottom: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.7em;
+	opacity: 0.05;
+	letter-spaceing: 3px;
 	text-decoration: none;
-	color: #aaa;
+	color: white;
 	transition: 0.5s;
 }
 
 .continue-link:hover {
-	opcaity: 0.8;
+	opacity: 0.8;
 }
