@@ -9,22 +9,31 @@ function checkAnswer() {
 	}
 }
 
-window.onload = function () {
-	positionRandomly("realBtn");
-	positionRandomly("fakeBtn");
-};
+window.onlad = function () {
+	const real = document.getElementById("realBtn");
+	const fake = document.getElementById("fakeBtn");
 
-function positionRandomly(id) {
-	const button = document.getElementById(id);
+	const padding = 120;
 
-const padding = 100;
+	const maxX = window.innerWidth = padding;
+	const maxY = window.innerHeight = padding;
 
-const maxX = window.innerWidth - padding;
-const maxY = window.innerHeight - padding ;
+	let realX = Math.random() * maxX;
+	let realY = Math.random() * maxY;
 
-const randomX = Math.random() * maxX;
-const randomY = Math.random() * maxY;
+	let fakeX, fakeY;
 
-button.style.left = randomX + "px";
-button.style.top = randomY + "px";
+	do {
+		fakeX = Math.random() * maxX;
+		fakeY = Math.random() * maxY;
+	} while (
+		Math.abs(fakeX - realX) < 150 &&
+		Math.abs(fakeY - realY) < 60
+		);
+
+	real.style.left = realX + "px";
+	real.style.top = realY "px";
+
+	fake.style.left =fakeX + "px";
+	fake.style.top = fakeY + "px";
 }
