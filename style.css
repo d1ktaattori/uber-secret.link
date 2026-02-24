@@ -86,8 +86,8 @@ input {
 	text-decoration: none;
 	color: white;
 	font-size: 0.9em;
-	opacity: 0.6;
-	transition: 0.4s;
+	opacity: 0.05;
+	transition: 0.4s ease, border-color 0.4s ease;
 }
 
 .quest-button:hover {
