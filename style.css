@@ -95,6 +95,11 @@ input {
 	border-color: white;
 }
 
+.real { 
+	opacity: 0.3;
+}
+
 .fake {
-	opacity 0.3;
-	}
+	opacity 0.9;
+	border-color: #aaa;
+}
