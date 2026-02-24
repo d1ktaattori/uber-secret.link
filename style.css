@@ -90,8 +90,8 @@ button:hover {
 
 .continue-link {
 	position: fixed;
-	bottom: 20px;
-	right: 25px;
+	bottom: 35px;
+	right: 50px;
 	font-size: 0.8em;
 	opacity: 0.15;
 	text-decoration: none;
