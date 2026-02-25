@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
 
 function positionBoth(btn1, btn2) {
 	const rect1 = btn1.getBoundingClientRect();
-	const rect2 _ btn2.getBoundingClientRect();
+	const rect2 = btn2.getBoundingClientRect();
 
 const maxX1 = window.innerWidth - rect1.width;
 	const maxY1 = window.innerHeight - rect1.height;
