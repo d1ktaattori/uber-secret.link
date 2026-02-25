@@ -14,33 +14,36 @@ window.addEventListener("load", function () {
   const fake = document.getElementById("fakeBtn");
 
   if (real && fake) {
-	  positionBoth(real, fake);
+    positionBoth(real, fake);
   }
 });
 
 function positionBoth(btn1, btn2) {
-	const rect1 = btn1.getBoundingClientRect();
-	const rect2 = btn2.getBoundingClientRect();
+  const rect1 = btn1.getBoundingClientRect();
+  const rect2 = btn2.getBoundingClientRect();
 
-const maxX1 = window.innerWidth - rect1.width;
-	const maxY1 = window.innerHeight - rect1.height;
+  const maxX1 = window.innerWidth - rect1.width;
+  const maxY1 = window.innerHeight - rect1.height;
 
-let x1 = Math.random() * maxX1;
-	let y1 = Math.random() * maxY1;
+  let x1 = Math.random() * maxX1;
+  let y1 = Math.random() * maxY1;
 
-btn1.style.left = x1 + "px";
-	btn1.style.top = window.innerHeight - rect2.height;
+  btn1.style.left = x1 + "px";
+  btn1.style.top = y1 + "px";
 
-let x2, y2;
+  const maxX2 = window.innerWidth - rect2.width;
+  const maxY2 = window.innerHeight - rect2.height;
 
-do {
-	x2 = Math.random() * maxX2;
-	y2 = Math.random()  * maxY2;
-} while (
-	Math.abs(x2 - x1) < 150 &&
-	Math.abs(y2 - y1) < 60
-	);
+  let x2, y2;
 
-btn2.style.left = x2 + "px";
-	btn2.style.top = y2 + "px";
+  do {
+    x2 = Math.random() * maxX2;
+    y2 = Math.random() * maxY2;
+  } while (
+    Math.abs(x2 - x1) < 150 &&
+    Math.abs(y2 - y1) < 60
+  );
+
+  btn2.style.left = x2 + "px";
+  btn2.style.top = y2 + "px";
 }
