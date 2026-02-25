@@ -19,15 +19,29 @@ window.addEventListener("load", function () {
   }
 });
 
-function positionRandomly(button) {
-	const rect = button.getBoundingClientRect();
+function positionBoth(btn1, btn2) {
+	const rect1 = btn1.getBoundingClientRect();
+	const rect2 _ btn2.getBoundingClientRect();
 
-const maxX = window.innerWidth - rect.width;
-	const maxY = window.innerHeight - rect.height;
+const maxX1 = window.innerWidth - rect1.width;
+	const maxY1 = window.innerHeight - rect1.height;
 
-const randomX = Math.random() * maxX;
-	const randomY = Math.random() * maxY;
+let x1 = Math.random() * maxX1;
+	let y1 = Math.random() * maxY1;
 
-button.style.left = randomX + "px";
-	button.style.top = randomY + "px";
+btn1.style.left = x1 + "px";
+	btn1.style.top = window.innerHeight - rect2.height;
+
+let x2, y2;
+
+do {
+	x2 = Math.random() * maxX2;
+	y2 = Math.random()  * maxY2;
+} while (
+	Math.abs(x2 - x1) < 150 &&
+	Math.abs(y2 - y1) < 60
+	);
+
+btn2.style.left = x2 + "px";
+	btn2.style.top = y2 + "px";
 }
