@@ -20,14 +20,14 @@ window.addEventListener("load", function () {
 });
 
 function positionRandomly(button) {
-  const padding = 120;
+	const rect = button.getBoundingClientRect();
 
-  const maxX = window.innerWidth - padding;
-  const maxY = window.innerHeight - padding;
+const maxX = window.innerWidth - rect.width;
+	const maxY = window.innerHeight - rect.height;
 
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
+const randomX = Math.random() * maxX;
+	const randomY = Math.random() * maxY;
 
-  button.style.left = randomX + "px";
-  button.style.top = randomY + "px";
+button.style.left = randomX + "px";
+	button.style.top = randomY + "px";
 }
