@@ -14,36 +14,44 @@ window.addEventListener("load", function () {
   const fake = document.getElementById("fakeBtn");
 
   if (real && fake) {
-    positionBoth(real, fake);
+    positionWithoutOverlap(real, fake);
   }
 });
 
-function positionBoth(btn1, btn2) {
-  const rect1 = btn1.getBoundingClientRect();
-  const rect2 = btn2.getBoundingClientRect();
+function positionWithoutOverlap(btn1, btn2) {
+  placeRandom(btn1);
 
-  const maxX1 = window.innerWidth - rect1.width;
-  const maxY1 = window.innerHeight - rect1.height;
-
-  let x1 = Math.random() * maxX1;
-  let y1 = Math.random() * maxY1;
-
-  btn1.style.left = x1 + "px";
-  btn1.style.top = y1 + "px";
-
-  const maxX2 = window.innerWidth - rect2.width;
-  const maxY2 = window.innerHeight - rect2.height;
-
-  let x2, y2;
+  let overlapping;
+  let attempts = 0;
 
   do {
-    x2 = Math.random() * maxX2;
-    y2 = Math.random() * maxY2;
-  } while (
-    Math.abs(x2 - x1) < 150 &&
-    Math.abs(y2 - y1) < 60
-  );
+    placeRandom(btn2);
+    overlapping = isOverlapping(btn1, btn2);
+    attempts++;
+  } while (overlapping && attempts < 100);
+}
 
-  btn2.style.left = x2 + "px";
-  btn2.style.top = y2 + "px";
+function placeRandom(button) {
+  const rect = button.getBoundingClientRect();
+
+  const maxX = window.innerWidth - rect.width;
+  const maxY = window.innerHeight - rect.height;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  button.style.left = x + "px";
+  button.style.top = y + "px";
+}
+
+function isOverlapping(el1, el2) {
+  const r1 = el1.getBoundingClientRect();
+  const r2 = el2.getBoundingClientRect();
+
+  return !(
+    r1.right < r2.left ||
+    r1.left > r2.right ||
+    r1.bottom < r2.top ||
+    r1.top > r2.bottom
+  );
 }
