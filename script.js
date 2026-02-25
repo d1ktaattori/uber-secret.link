@@ -13,11 +13,10 @@ window.addEventListener("load", function () {
   const container = document.querySelector(".random-container");
   const real = document.getElementById("realBtn");
 
-  const fakeCount = 6; // change this number for more fake buttons
+  const fakeCount = 30;
 
   const buttons = [real];
 
-  // Create fake buttons
   for (let i = 0; i < fakeCount; i++) {
     const fake = document.createElement("a");
     fake.href = "wrong.html";
