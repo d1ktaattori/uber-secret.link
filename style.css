@@ -80,18 +80,22 @@ input {
 }
 
 .quest-button {
-	filter: blur(1px);
-	position: absolute;
-	padding: 10x 20px;
-	background: transparent;
+  position: absolute;
+  padding: 10px 20px;
+  background: transparent;
 
-color: rgba(255, 255, 255, 0.02);
-	border: 1px solid rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 
-text-decoration: none;
-	font-size: 0.4em;
+  text-decoration: none;
+  font-size: 0.9em;
 
-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.quest-button:hover {
+  color: white;
+  border-color: white;
 }
 
 .quest-button:hover {
