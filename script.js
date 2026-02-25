@@ -14,8 +14,7 @@ window.addEventListener("load", function () {
   const fake = document.getElementById("fakeBtn");
 
   if (real && fake) {
-    positionRandomly(real);
-    positionRandomly(fake);
+	  positionBoth(real, fake);
   }
 });
 
